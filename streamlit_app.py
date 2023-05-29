@@ -1,13 +1,15 @@
-# streamlit_app.py
+import streamlit
+import pandas
+import request
 import snowflake.connector
-import streamlit as st
+from urllib error import URLError
 
-# Initialize connection.
-conn = st.experimental_connection('snowpark')
+streamlit.title('My New Healty Diner')
 
-# Perform query.
-df = conn.query('SELECT * from v_employees;', ttl=600)
+streamlit.header('Breakfast Favorites')
+streamlit.text('🥣 Omega 3 & Blueberry Oatmeal')
+streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
+streamlit.text('🐔 Hard-Boiled Free-Range Egg')
+streamlit.text('🥑🍞 Avocado Toast')
 
-# Print results.
-for row in df.itertuples():
-    st.write(f"{row.NAME} has a :{row.PET}:")
+streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
